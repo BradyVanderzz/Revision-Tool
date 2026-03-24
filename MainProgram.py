@@ -1,4 +1,5 @@
-# Made with Python using CustomTKinter for GUI
+### Made with Python using CustomTKinter for GUI ###
+
 # Imports
 import random
 import os
@@ -30,6 +31,17 @@ fCardButton.pack(side="left", pady=0, padx=0)
 
 qListButton = ctk.CTkButton(bar, text="Questions & Answers")
 qListButton.pack(side="left", pady=0, padx=50)
+
+# Home Page
+HomeP = ctk.CTkFrame(All, fg_color="transparent") # Home page text
+HomeP.place(x=0, y=125, relwidth=1, relheight=1)
+
+TitleText = ctk.CTkLabel(HomeP, text="Welcome to the Revision Tool!", font=("Arial Black", 60)) # Home page title text
+TitleText.pack(padx=20, pady=30)
+
+IntroPara = ctk.CTkLabel(HomeP, text="This application is designed to help you revise.\n\nTo get started, click on the Questions & Answers button on the top bar and input your own question and the answer to that question on the immediate line under it, and then do the same for all questions & answers.\nThese questions can then be answered as a quiz or as flashcards.", font=("Arial", 25), wraplength=950) # Home page introduction paragraph
+IntroPara.pack(padx=20, pady=30)
+
 
 # Quiz frame
 QA = ctk.CTkFrame(All, fg_color="transparent") # Question and Answer Frame
@@ -98,10 +110,18 @@ def saveQuestions1():
     f.write(content)
     getQ()
 
+# Shows home page from launch
+def showHome():
+     QA.place_forget()
+     FCfront.place_forget()
+     docuFrame1.place_forget()
+     HomeP.place(x=0, y=100, relwidth=1, relheight=1)
+
 # Removes quiz GUI and shows Question & Answer GUI
 def showDoc1():
      QA.place_forget()
      FCfront.place_forget()
+     HomeP.place_forget()
      docuFrame1.place(x=0, y=100, relwidth=1, relheight=1)
 
      f = open(file_path, "r", encoding="utf-8")
@@ -116,6 +136,7 @@ def showQuiz():
      docuFrame1.place_forget()
      FCfront.place_forget()
      FCback.place_forget()
+     HomeP.place_forget()
      QA.place(x=0, y=100, relwidth=1, relheight=1)
 
 # Removes previous GUI and opens Flashcards GUI
@@ -123,6 +144,7 @@ def showfCard():
      docuFrame1.place_forget()
      QA.place_forget()
      FCback.place_forget()
+     HomeP.place_forget()
      fLoadQ()
 
 # Resets submit button and assigns a random question to num
@@ -156,6 +178,7 @@ def fLoadBack():
      docuFrame1.place_forget()
      QA.place_forget()
      FCfront.place_forget()
+     HomeP.place_forget()
      FCback.place(x=0, y=125, relwidth=1, relheight=1) # Places back of flashcard frame
      fLoadA()
 
@@ -204,7 +227,8 @@ def quest():
 
 
 # Main Code
-getQ()
+showHome() # Shows home page on launch
+getQ() # Grabs a question
 
 quizButton.configure(command=showQuiz)
 qListButton.configure(command=showDoc1)
