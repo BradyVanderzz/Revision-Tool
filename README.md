@@ -1,14 +1,13 @@
 # Revision-Tool
-A quick and easy revision / study program allowing you to input questions &amp; answers for quizzes and flashcards.
+A quick and easy revision program allowing you to input questions & answers for quizzes and flashcards.
 # What is this?
 A simple revision-focused application built in Python to help users practise their own questions and answers.
 
 ## Features
-- Allows users to input their own questions and answers and update them later
+- Allows users to input their own questions and answers into 5 different documents which can later be updated
 - Users can choose between Quiz mode or Flashcard mode
 - Quiz mode gives users three attempts to answer a randomly selected question
 - Flashcard mode displays a random question and allows users to flip the card to view the answer
-- Uses a very simple and clear user interface
 
 ## Requirements
 - Python 3
@@ -18,8 +17,7 @@ A simple revision-focused application built in Python to help users practise the
 I built this project to help with my A Level revision so I could simply create and practise questions on topics from class
 
 ## Future improvements
-- Allow the question document to update quiz and flashcards without restarting the program
-- Allow users to label questions as "confident" or "needs practise"
+- Allow users to label questions as "confident" or "needs practise" for Quiz and Flashcards
 - Support multiple Q&A documents so users can create and organise questions by topic
 
 ## How to install CustomTKinter
